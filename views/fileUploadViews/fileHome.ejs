@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Upload Home</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="/assets/fileUpload/js/dropzone.js"></script>
+
+    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+    <link rel="stylesheet" href="/assets/fileUpload/styles.css">
+  </head>
+  <body>
+
+    <div class="fluid-container">
+      <h1>File upload</h1>
+      <p>Please drag and drop the files you want to upload to the server.</p>
+
+      <form action="/fileUpload"
+        class="dropzone"
+        id="drop"></form>
+
+        <div class="" id="thumbnail-container">
+          <% for(var i=0; i< files.length; i++){ %>
+            <div class="thumbnails">
+              <a href="#" class="click" data="<%= files[i]._id %>?<%= files[i].filename %>?<%= files[i].length %>?<%= files[i].uploadDate %>">
+                <%= files[i].filename %>
+              </a>
+              </br>
+            </div>
+          <% } %>
+        </div>
+
+
+    </div>
+    <div class="hidden" id="dl-delete">
+      <div class="file-contents">
+        <span class="left">Name:</span>
+        <span class="right" id="name"></span></br>
+        <span class="left">Size:</span>
+        <span class="right" id="size"></span></br>
+        <span class="left">Date uploaded:</span>
+        <span class="right" id="date"></span>
+      </div>
+      <div id="user-input-button-container">
+        <input type="button" class="file-buttons left" value="Download" id="download-btn"/>
+        <input type="button" class="file-buttons right" value="Delete" id="delete-btn"/>
+      </div>
+      </br>
+      <div id="cancel-button-container">
+        <input type="button" id="cancel" value="cancel" id="Cancel"/>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/assets/fileUpload/js/click.js"></script>
+  </body>
+</html>

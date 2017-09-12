@@ -1,0 +1,27 @@
+{
+  "name": "File Upload",
+  "version": "1.0.0",
+  "description": "A node.js site that allows users to upload files to a gridfs database, and allowing them to download or delete online.",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "gridfs-stream": "^1.1.1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "File",
+    "Upload",
+    "Collin",
+    "Nolen"
+  ],
+  "author": "Collin Nolen",
+  "license": "ISC"
+}
